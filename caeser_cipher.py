@@ -19,9 +19,9 @@ def manipulateStr(myStr, myKey): #encrypts a string using caeser cipher
 	alphaTot  = 26 #26 letters in the alphabet
 	for i in range(len(myStr)):
 		if (myStr[i]!=' '):
-			newStr+=chr(((ord(myStr[i])+myKey-asciiBase)%alphaTot)+asciiBase) #you add/minus 96 because, 'a' is 97 in ASCII/UNICODE
+			newStr+=chr(((ord(myStr[i])+myKey-asciiBase)%alphaTot)+asciiBase)
 		else:
-			newStr+=' ' 
+			newStr+=' ' #using the formula above, ' ' = n which churns out wierd results
 	return newStr
 
 def optionMenu(): #makes it a little more user friendly
