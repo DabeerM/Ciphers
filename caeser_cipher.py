@@ -15,9 +15,11 @@ def  decrypt(myStr): #brute forces all combos into a textfile
 
 def manipulateStr(myStr, myKey): #encrypts a string using caeser cipher
 	newStr = ""
+	asciiBase = 96 #As 'a' is 97 in ASCII/UNICODE
+	alphaTot  = 26 #26 letters in the alphabet
 	for i in range(len(myStr)):
 		if (myStr[i]!=' '):
-			newStr+=chr(((ord(myStr[i])+myKey-96)%26)+96) #you add/minus 96 because, 'a' is 97 in ASCII/UNICODE
+			newStr+=chr(((ord(myStr[i])+myKey-asciiBase)%alphaTot)+asciiBase) #you add/minus 96 because, 'a' is 97 in ASCII/UNICODE
 		else:
 			newStr+=' ' 
 	return newStr
